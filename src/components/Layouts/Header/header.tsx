@@ -5,7 +5,7 @@ import HeaderMenu from "./headerMenu";
 import CartIcon from "@/components/Cart/cartIcon";
 import FavouriteButton from "@/components/FavouriteDisplay/favouriteButton";
 import SignIn from "@/components/Authentication/signin";
-import MobileMenu from "@/components/MobileMenu/mobileMenu";
+import MobileMenu from "@/components/Mobile/MobileMenu/mobileMenu";
 
 function Header() {
     return (
