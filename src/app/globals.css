@@ -61,6 +61,7 @@
 }
 
 :root {
+  --font-poppins: "Poppins", sans-serif;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -136,15 +137,18 @@
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
+  .hoverEffect {
+    @apply transition-all duration-300 ease-in-out;
   }
+  button {
+    @apply hover:cursor-pointer;
+  }
+}
 
-  .hoverEffect{
-    @apply transition-all duration-300 ease-in-out
-  }
-  button{
-    @apply cursor-pointer;
-  }
+body {
+  font-family: var(--font-poppins);
+}
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

@@ -12,22 +12,22 @@ interface Props {
 const socialLink = [
     {
         title: "Github",
-        href: "",
+        href: "https://github.com/ebubestrong",
         icon: <FaGithub className="w-5 h-5" />
     },
     {
         title: "LinkedIn",
-        href: "",
+        href: "https://www.linkedin.com/in/abrahamsamuel567/",
         icon: <FaLinkedinIn className="w-5 h-5" />
     },
     {
         title: "X",
-        href: "",
+        href: "https://x.com/EbubeStrong21",
         icon: <FaXTwitter className="w-5 h-5" />
     },
     {
         title: "Facebook",
-        href: "",
+        href: "https://facebook.com/abj.strong",
         icon: <FaFacebookF className="w-5 h-5" />
     },
 ]
