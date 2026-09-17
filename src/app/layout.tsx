@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Layouts/Header/header";
-import Footer from "@/components/Layouts/footer";
+import Footer from "@/components/Layouts/Footer/footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
-const jetbrainsMono = JetBrains_Mono({subsets:['latin'],variable:'--font-mono'});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -26,15 +15,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={"h-full antialiased " + geistSans.variable + " " + geistMono.variable + " font-mono " + jetbrainsMono.variable}
-    >
-      <body className="min-h-full flex flex-col">
-        <Header />
-        {children}
-        <Footer />
+    <ClerkProvider>
+      <html lang="en">
+        <body className="font-poppins antialiased flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
         </body>
-    </html>
+      </html>
+    </ClerkProvider>
   );
 }

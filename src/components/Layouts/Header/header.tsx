@@ -6,10 +6,15 @@ import CartIcon from "@/components/Cart/cartIcon";
 import FavouriteButton from "@/components/FavouriteDisplay/favouriteButton";
 import SignIn from "@/components/Authentication/signin";
 import MobileMenu from "@/components/Mobile/MobileMenu/mobileMenu";
+import { currentUser } from "@clerk/nextjs/server";
+import { ClerkLoaded, Show, UserButton } from "@clerk/nextjs";
 
-function Header() {
+const Header = async() => {
+    const user = await currentUser();
+    // console.log("Current User:", user); // Log the current user to the console
+
     return (
-        <header className="bg-white py-5 border-b-black/20">
+        <header className="bg-white py-5 sticky top-0 z-50">
             <Container className="flex items-center justify-between text-lightColor">
 
                 <div className="flex w-auto md:w-1/3 items-center justify-start gap-2.5 md:gap-0">
@@ -24,7 +29,13 @@ function Header() {
                     <CartIcon />
                     <FavouriteButton />
 
-                    <SignIn />
+                    <ClerkLoaded>
+                        <Show when="signed-in">
+                            <UserButton/>
+                        </Show>
+
+                        {!user && <SignIn />}
+                    </ClerkLoaded>
                 </div>
             </Container>
         </header>
