@@ -1,10 +1,10 @@
 import Container from "@/components/Layouts/container";
+import HomeBanner from "@/components/Pages/Home/homeBanner";
 
 export default function Home() {
   return (
     <Container>
-    {/* <p>Biger</p> */}
-    <p></p>
+    <HomeBanner />
     </Container>
   );
 }
