@@ -21,7 +21,7 @@ const socialLink = [
         icon: <FaLinkedinIn className="w-5 h-5" />
     },
     {
-        title: "X",
+        title: "X (Twitter)",
         href: "https://x.com/EbubeStrong21",
         icon: <FaXTwitter className="w-5 h-5" />
     },
