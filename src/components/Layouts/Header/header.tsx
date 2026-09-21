@@ -14,7 +14,7 @@ const Header = async() => {
     // console.log("Current User:", user); // Log the current user to the console
 
     return (
-        <header className="bg-white py-5 sticky top-0 z-50">
+        <header className="bg-white/60 py-5 sticky top-0 z-50 backdrop-blur-md">
             <Container className="flex items-center justify-between text-lightColor">
 
                 <div className="flex w-auto md:w-1/3 items-center justify-start gap-2.5 md:gap-0">
