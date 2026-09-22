@@ -1,5 +1,5 @@
 import { Product } from "@/sanity.types";
-import { getBrand } from "@/sanity/lib/queries";
+import { getBrand } from "@/sanity/queries/index";
 import {
   Accordion,
   AccordionContent,
@@ -24,7 +24,7 @@ const ProductCharacteristics = async ({
             Brand:{" "}
             {brand && (
               <span className="font-semibold tracking-wide">
-                {brand[0]?.brandName}
+                {brand?.brandName}
               </span>
             )}
           </p>
