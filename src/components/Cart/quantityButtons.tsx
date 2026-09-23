@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Minus, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import toast from "react-hot-toast";
+import type { ProductWithCategories } from "@/sanity/queries";
 
 interface Props {
-  product: Product;
+  product: ProductWithCategories;
   className?: string;
 }
 const QuantityButtons = ({ product, className }: Props) => {

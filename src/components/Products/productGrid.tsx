@@ -8,11 +8,12 @@ import NoProductAvailable from "./noProductAvailable";
 import { Loader2 } from "lucide-react";
 import { productType } from "@/constants/data";
 import { Product } from "@/sanity.types";
+import type { ProductWithCategories } from "@/sanity/queries";
 import Container from "@/components/Layouts/container";
 import HomeTabbar from "@/components/Pages/Home/HomeTab/homeTab";
 
 const ProductGrid = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<ProductWithCategories[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedTab, setSelectedTab] = useState(productType[0]?.title || "");
 

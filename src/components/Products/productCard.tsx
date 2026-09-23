@@ -8,8 +8,9 @@ import PriceView from "./Price/PriceView";
 import Title from "@/components/ui/title";
 import ProductSideMenu from "./productSideMenu";
 import AddToCartButton from "@/components/Cart/AddToCartButton";
+import type { ProductWithCategories } from "@/sanity/queries";
 
-const ProductCard = ({ product }: { product: Product }) => {
+const ProductCard = ({ product }: { product: ProductWithCategories }) => {
   return (
     <div className="text-sm border rounded-md border-darkBlue/20 group bg-white">
       <div className="relative group overflow-hidden bg-shop-light-bg ">

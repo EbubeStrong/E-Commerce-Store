@@ -7,9 +7,10 @@ import useStore from "../../../store";
 import toast from "react-hot-toast";
 import PriceFormatter from "@/components/Products/Price/PriceFormatter";
 import QuantityButtons from "./quantityButtons";
+import type { ProductWithCategories } from "@/sanity/queries";
 
 interface Props {
-  product: Product;
+  product: ProductWithCategories;
   className?: string;
 }
 

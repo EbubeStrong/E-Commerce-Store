@@ -4,12 +4,13 @@ import { Product } from "@/sanity.types";
 import useStore from "../../../store";
 import { Heart } from "lucide-react";
 import toast from "react-hot-toast";
+import type { ProductWithCategories } from "@/sanity/queries";
 
 const ProductSideMenu = ({
   product,
   className,
 }: {
-  product: Product;
+  product: ProductWithCategories;
   className?: string;
 }) => {
   const { favoriteProduct, addToFavorite } = useStore();

@@ -81,6 +81,12 @@ const OTHERS_BLOG_QUERY = defineQuery(`*[
     "slug": slug.current,
   }
 }`);
+
+const PRODUCTS_BY_CATEGORY_SLUG = defineQuery(`*[_type == "product" && references(*[_type == "category" && slug.current == $slug]._id)] | order(name asc){
+  ...,
+  "categories": categories[]->{_id, title, slug}
+}`);
+
 export {
   BRANDS_QUERY,
   LATEST_BLOG_QUERY,
@@ -92,4 +98,5 @@ export {
   SINGLE_BLOG_QUERY,
   BLOG_CATEGORIES,
   OTHERS_BLOG_QUERY,
+  PRODUCTS_BY_CATEGORY_SLUG,
 };
