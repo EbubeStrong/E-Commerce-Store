@@ -1,11 +1,14 @@
-import Container from "@/components/Layouts/container";
+import Shop from "@/components/Pages/Shop/shop";
+import { getAllBrands, getCategories } from "@/sanity/queries";
 
-function Shop() {
-    return ( 
-        <Container>
-        <p>Shop</p>
-        </Container>
-     );
-}
+const ShopPage = async () => {
+  const categories = await getCategories();
+  const brands = await getAllBrands();
+  return (
+    <div className="bg-white">
+      <Shop categories={categories} brands={brands} />
+    </div>
+  );
+};
 
-export default Shop;
+export default ShopPage;
