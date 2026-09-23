@@ -3,7 +3,7 @@ import HomeBanner from "@/components/Pages/Home/homeBanner";
 import ProductGrid from "@/components/Products/productGrid";
 import HomeCategories from "@/components/Pages/Home/HomeTab/homeCategories";
 import { getAllBrands, getCategories } from "@/sanity/queries";
-import ShopByBrands from "@/components/Pages/Shop/ShopByBrands";
+import ShopByBrands from "@/components/Pages/Shop/shopByBrands";
 import BlogPage from "./blog/page";
 
 export default async function Home() {
