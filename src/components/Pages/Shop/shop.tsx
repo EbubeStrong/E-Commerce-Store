@@ -19,9 +19,10 @@ interface Props {
 }
 const Shop = ({ categories, brands }: Props) => {
   const searchParams = useSearchParams();
+  
   const brandParams = searchParams?.get("brand");
   const categoryParams = searchParams?.get("category");
-  
+
   const [products, setProducts] = useState<ProductWithCategories[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(
