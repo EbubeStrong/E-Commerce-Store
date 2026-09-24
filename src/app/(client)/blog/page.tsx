@@ -32,22 +32,22 @@ const BlogPage = async () => {
                     {blog?.blogcategories?.map((item, index) => (
                       <p
                         key={index}
-                        className="font-semibold text-shop_dark_green tracking-wider"
+                        className="font-semibold text-shop-dark-green tracking-wider"
                       >
                         {item?.title}
                       </p>
                     ))}
-                    <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hover:cursor-pointer hoverEffect" />
+                    <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop-dark-green hover:cursor-pointer hoverEffect" />
                   </div>
-                  <p className="flex items-center gap-1 text-lightColor relative group hover:cursor-pointer hover:text-shop_dark_green hoverEffect">
+                  <p className="flex items-center gap-1 text-lightColor relative group hover:cursor-pointer hover:text-shop-dark-green hoverEffect">
                     <Calendar size={15} />{" "}
                     {dayjs(blog.publishedAt).format("MMMM D, YYYY")}
-                    <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
+                    <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop-dark-green hoverEffect" />
                   </p>
                 </div>
                 <Link
                   href={`/blog/${blog?.slug?.current}`}
-                  className="text-base font-bold tracking-wide mt-5 line-clamp-2 hover:text-shop_dark_green hoverEffect"
+                  className="text-base font-bold tracking-wide mt-5 line-clamp-2 hover:text-shop-dark-green hoverEffect"
                 >
                   {blog?.title}
                 </Link>

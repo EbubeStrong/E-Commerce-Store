@@ -131,22 +131,22 @@ const SingleBlogPage = async ({
                   (item, index) => (
                     <p
                       key={index}
-                      className="font-semibold text-shop_dark_green tracking-wider"
+                      className="font-semibold text-shop-dark-green tracking-wider"
                     >
                       {item?.title}
                     </p>
                   )
                 )}
-                <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hover:cursor-pointer hoverEffect" />
+                <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop-dark-green hover:cursor-pointer hoverEffect" />
               </div>
-              <p className="flex items-center gap-1 text-lightColor relative group hover:cursor-pointer hover:text-shop_dark_green hoverEffect">
+              <p className="flex items-center gap-1 text-lightColor relative group hover:cursor-pointer hover:text-shop-dark-green hoverEffect">
                 <Pencil size={15} /> {blog?.author?.name}
-                <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
+                <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop-dark-green hoverEffect" />
               </p>
-              <p className="flex items-center gap-1 text-lightColor relative group hover:cursor-pointer hover:text-shop_dark_green hoverEffect">
+              <p className="flex items-center gap-1 text-lightColor relative group hover:cursor-pointer hover:text-shop-dark-green hoverEffect">
                 <Calendar size={15} />{" "}
                 {dayjs(blog.publishedAt).format("MMMM D, YYYY")}
-                <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
+                <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop-dark-green hoverEffect" />
               </p>
             </div>
             <h2 className="text-2xl font-bold my-5">{blog?.title}</h2>
@@ -210,10 +210,10 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
                   alt="blogImage"
                   width={100}
                   height={100}
-                  className="w-16 h-16 rounded-full object-cover border-[1px] border-shop_dark_green/10 group-hover:border-shop_dark_green hoverEffect"
+                  className="w-16 h-16 rounded-full object-cover border-[1px] border-shop-dark-green/10 group-hover:border-shop-dark-green hoverEffect"
                 />
               )}
-              <p className="line-clamp-2 text-sm text-lightColor group-hover:text-shop_dark_green hoverEffect">
+              <p className="line-clamp-2 text-sm text-lightColor group-hover:text-shop-dark-green hoverEffect">
                 {blog?.title}
               </p>
             </Link>
