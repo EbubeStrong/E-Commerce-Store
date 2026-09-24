@@ -7,9 +7,9 @@ import { client } from "@/sanity/lib/client";
 import { Loader2 } from "lucide-react";
 import Container from "@/components/Layouts/container";
 import Title from "@/components/ui/title";
-import CategoryList from "./Category/CategoryList";
-import BrandList from "./Brand/BrandList";
-import PriceList from "./Price/PriceList";
+import CategoryList from "./Category/categoryList";
+import BrandList from "./Brand/brandList";
+import PriceList from "./Price/priceList";
 import ProductCard from "@/components/Products/productCard";
 import NoProductAvailable from "@/components/Products/noProductAvailable";
 
@@ -21,6 +21,7 @@ const Shop = ({ categories, brands }: Props) => {
   const searchParams = useSearchParams();
   const brandParams = searchParams?.get("brand");
   const categoryParams = searchParams?.get("category");
+  
   const [products, setProducts] = useState<ProductWithCategories[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(
@@ -30,7 +31,7 @@ const Shop = ({ categories, brands }: Props) => {
     brandParams || null
   );
   const [selectedPrice, setSelectedPrice] = useState<string | null>(null);
-  
+
   useEffect(() => {
   const fetchProducts = async () => {
     setLoading(true);

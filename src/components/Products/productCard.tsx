@@ -7,7 +7,7 @@ import { Flame } from "lucide-react";
 import PriceView from "./Price/PriceView";
 import Title from "@/components/ui/title";
 import ProductSideMenu from "./productSideMenu";
-import AddToCartButton from "@/components/Cart/AddToCartButton";
+import AddToCartButton from "@/components/Cart/addToCartButton";
 import type { ProductWithCategories } from "@/sanity/queries";
 
 const ProductCard = ({ product }: { product: ProductWithCategories }) => {
