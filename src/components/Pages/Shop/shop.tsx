@@ -19,7 +19,7 @@ interface Props {
 }
 const Shop = ({ categories, brands }: Props) => {
   const searchParams = useSearchParams();
-  
+
   const brandParams = searchParams?.get("brand");
   const categoryParams = searchParams?.get("category");
 
@@ -59,7 +59,9 @@ const Shop = ({ categories, brands }: Props) => {
         { selectedCategory, selectedBrand, minPrice, maxPrice },
         { next: { revalidate: 0 } }
       );
+      
       setProducts(data);
+
     } catch (error) {
       console.log("Shop product fetching Error", error);
     } finally {
@@ -93,6 +95,7 @@ const Shop = ({ categories, brands }: Props) => {
             )}
           </div>
         </div>
+
         <div className="flex flex-col md:flex-row gap-5 border-t border-t-shop-dark-green/50">
           <div className="md:sticky md:top-20 md:self-start md:h-[calc(100vh-160px)] md:overflow-y-auto md:min-w-64 pb-5 md:border-r border-r-shop-btn-dark-green/50 scrollbar-hide">
             <CategoryList
@@ -110,6 +113,7 @@ const Shop = ({ categories, brands }: Props) => {
               selectedPrice={selectedPrice}
             />
           </div>
+          
           <div className="flex-1 pt-5">
             <div className="h-[calc(100vh-160px)] overflow-y-auto pr-2 scrollbar-hide">
               {loading ? (
