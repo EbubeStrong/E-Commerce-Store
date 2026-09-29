@@ -4,6 +4,7 @@ import { Heart } from "lucide-react";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import type { ProductWithCategories } from "@/sanity/queries";
+import useIsHydrated from "@/hooks/useIsHydrated";
 
 const FavoriteButton = ({
   showProduct = false,
@@ -13,8 +14,11 @@ const FavoriteButton = ({
   product?: ProductWithCategories | null | undefined;
 }) => {
   const { favoriteProduct, addToFavorite } = useStore();
+  const mounted = useIsHydrated();
   const existingProduct =
-    favoriteProduct.find((item) => item?._id === product?._id) || null;
+    mounted && product?._id
+      ? favoriteProduct.find((item) => item?._id === product?._id) || null
+      : null;
 
   const handleFavorite = (e: React.MouseEvent<HTMLSpanElement>) => {
     e.preventDefault();
@@ -34,7 +38,7 @@ const FavoriteButton = ({
         <Link href={"/wishlist"} className="group relative">
           <Heart className="w-5 h-5 hover:text-shop-light-green hoverEffect" />
           <span className="absolute -top-1 -right-1 bg-shop-dark-green text-white h-3.5 w-3.5 rounded-full text-xs font-semibold flex items-center justify-center">
-            {favoriteProduct?.length ? favoriteProduct?.length : 0}
+            {mounted ? (favoriteProduct?.length ? favoriteProduct?.length : 0) : 0}
           </span>
         </Link>
       ) : (

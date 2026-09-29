@@ -5,9 +5,10 @@ import { cn } from "@/lib/utils";
 import { ShoppingBag } from "lucide-react";
 import useStore from "../../../store";
 import toast from "react-hot-toast";
-import PriceFormatter from "@/components/Products/Price/PriceFormatter";
+import PriceFormatter from "@/components/Products/Price/priceFormatter";
 import QuantityButtons from "./quantityButtons";
 import type { ProductWithCategories } from "@/sanity/queries";
+import useIsHydrated from "@/hooks/useIsHydrated";
 
 interface Props {
   product: ProductWithCategories;
@@ -16,6 +17,7 @@ interface Props {
 
 const AddToCartButton = ({ product, className }: Props) => {
   const { addItem, getItemCount } = useStore();
+  const mounted = useIsHydrated();
   const itemCount = getItemCount(product?._id);
   const isOutOfStock = product?.stock === 0;
 
@@ -32,7 +34,7 @@ const AddToCartButton = ({ product, className }: Props) => {
   };
   return (
     <div className="w-full h-12 flex items-center">
-      {itemCount ? (
+      {mounted && itemCount ? (
         <div className="text-sm w-full">
           <div className="flex items-center justify-between">
             <span className="text-xs text-darkColor/80">Quantity</span>
