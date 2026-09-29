@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { Product } from "./src/sanity.types";
+// import { Product } from "./src/sanity.types";
 import type { ProductWithCategories } from "./src/sanity/queries";
 
 type StoreProduct = ProductWithCategories;
