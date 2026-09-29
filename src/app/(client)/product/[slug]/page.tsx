@@ -10,7 +10,7 @@ import AddToCartButton from "@/components/Cart/addToCartButton";
 import FavoriteButton from "@/components/FavouriteDisplay/favouriteButton";
 import Container from "@/components/Layouts/container";
 import ImageView from "@/components/Products/imageView";
-import PriceView from "@/components/Products/Price/PriceView";
+import PriceView from "@/components/Products/Price/priceView";
 import ProductCharacteristics from "@/components/Products/productCharacteristics";
 
 const SingleProductPage = async ({

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { StarIcon } from "@sanity/icons";
 import { Flame } from "lucide-react";
-import PriceView from "./Price/PriceView";
+import PriceView from "./Price/priceView";
 import Title from "@/components/ui/title";
 import ProductSideMenu from "./productSideMenu";
 import AddToCartButton from "@/components/Cart/addToCartButton";
