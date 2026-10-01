@@ -40,6 +40,7 @@ const CartPage = () => {
     getSubTotalPrice,
     resetCart,
   } = useStore();
+
   const [loading, setLoading] = useState(false);
   const groupedItems = useStore((state) => state.getGroupedItems());
   const { isSignedIn } = useAuth();
@@ -101,7 +102,7 @@ const CartPage = () => {
   return (
     <div className="bg-gray-50 pb-52 md:pb-10">
       {isSignedIn ? (
-        <Container>
+        <Container className="sticky top-30 z-10 mb-5">
           {groupedItems?.length ? (
             <>
               <div className="flex items-center gap-2 py-5">
@@ -109,7 +110,7 @@ const CartPage = () => {
                 <Title>Shopping Cart</Title>
               </div>
               <div className="grid lg:grid-cols-3 md:gap-8">
-                <div className="lg:col-span-2 rounded-lg">
+                <div className="lg:col-span-2 rounded-lg lg:max-h-[calc(100vh-10px)] lg:overflow-y-auto scrollbar-hide">
                   <div className="border bg-white rounded-md">
                     {groupedItems?.map(({ product }) => {
                       const itemCount = getItemCount(product?._id);
@@ -205,7 +206,7 @@ const CartPage = () => {
                     </Button>
                   </div>
                 </div>
-                
+
                 <div className="lg:sticky lg:top-20 lg:self-start lg:h-fit">
                   <div className="lg:col-span-1">
                     <div className="hidden md:inline-block w-full bg-white p-6 rounded-lg border">
