@@ -32,12 +32,13 @@ const CategoryProducts = ({ products, categories, currentSlug }: Props) => {
           <Button
             onClick={() => handleCategoryChange(item?.slug?.current as string)}
             key={item?._id}
-            className={`bg-transparent border-0 p-0 rounded-none text-darkColor shadow-none hover:bg-shop-light-green hover:text-white font-semibold hoverEffect border-b last:border-b-0 transition-colors capitalize ${item?.slug?.current === activeSlug && "bg-shop-light-green text-white border-shop-orange"}`}
+            className={`bg-transparent border-0 p-0 rounded-none text-darkColor shadow-none hover:bg-shop-light-green hover:text-white font-semibold hoverEffect border-b last:border-b-0 transition-colors capitalize ${item?.slug?.current === activeSlug && "bg-shop-light-green text-white border-shop-lighter-text"}`}
           >
             <p className="w-full text-left px-2">{item?.title}</p>
           </Button>
         ))}
       </div>
+      
       <div className="flex-1">
         {products?.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5">

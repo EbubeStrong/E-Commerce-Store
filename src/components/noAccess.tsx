@@ -32,7 +32,7 @@ const NoAccess = ({
             </Button>
           </SignInButton>
         </CardContent>
-        <CardFooter className="flex flex-col space-y-2">
+        <CardFooter className="flex flex-col space-y-2 mb-4">
           <div className="text-sm text-muted-foreground text-center">
             Don&rsquo;t have an account?
           </div>
