@@ -100,7 +100,7 @@ const CartPage = () => {
     }
   };
   return (
-    <div className="bg-gray-50 pb-52 md:pb-10">
+    <div className="bg-gray-50 pb-3 md:pb-10">
       {isSignedIn ? (
         <Container className="sticky top-30 z-10 mb-5">
           {groupedItems?.length ? (
@@ -233,7 +233,7 @@ const CartPage = () => {
                           />
                         </div>
                         <Button
-                          className="w-full rounded-full font-semibold tracking-wide hoverEffect"
+                          className="w-full bg-shop-dark-green hover:bg-shop-light-green rounded-full font-semibold tracking-wide hoverEffect"
                           size="lg"
                           disabled={loading}
                           onClick={handleCheckout}
@@ -258,7 +258,7 @@ const CartPage = () => {
                                 <div
                                   key={address?._id}
                                   onClick={() => setSelectedAddress(address)}
-                                  className={`flex items-center space-x-2 mb-4 cursor-pointer ${selectedAddress?._id === address?._id && "text-shop_dark_green"}`}
+                                  className={`flex items-center space-x-2 mb-4 cursor-pointer ${selectedAddress?._id === address?._id && "text-shop-dark_green"}`}
                                 >
                                   <RadioGroupItem
                                     value={address?._id.toString()}
@@ -287,10 +287,11 @@ const CartPage = () => {
                     )}
                   </div>
                 </div>
+                <Separator className="md:hidden" />
                 {/* Order summary for mobile view */}
-                <div className="md:hidden fixed bottom-0 left-0 w-full bg-white pt-2">
+                <div className="md:hidden sticky bottom-0 left-0 w-full bg-white pt-5">
                   <div className="bg-white p-4 rounded-lg border mx-4">
-                    <h2>Order Summary</h2>
+                    <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
                         <span>SubTotal</span>
@@ -311,7 +312,7 @@ const CartPage = () => {
                         />
                       </div>
                       <Button
-                        className="w-full rounded-full font-semibold tracking-wide hoverEffect"
+                        className="w-full rounded-full bg-shop-dark-green hover:bg-shop-light-green font-semibold tracking-wide hoverEffect"
                         size="lg"
                         disabled={loading}
                         onClick={handleCheckout}
