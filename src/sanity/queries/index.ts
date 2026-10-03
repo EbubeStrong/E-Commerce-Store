@@ -55,6 +55,16 @@ interface CategoryWithProductCount extends Category {
   productCount: number;
 }
 
+interface OrderWithProducts extends Omit<Order, "products"> {
+  products?: Array<{
+    _id?: string;
+    _type?: string;
+    _key: string;
+    quantity?: number;
+    product?: Product;
+  }>;
+}
+
 interface BlogCategoriesResult {
   blogcategories: Array<Blogcategory>;
 }
@@ -128,10 +138,10 @@ const getBrand = async (slug: string): Promise<BrandNameResult | null> => {
   }
 };
 
-const getMyOrders = async (userId: string): Promise<Order[]> => {
+const getMyOrders = async (userId: string): Promise<OrderWithProducts[]> => {
   try {
     const { data } = await sanityFetch({ query: MY_ORDERS_QUERY, params: { userId } });
-    return (data as Order[]) ?? [];
+    return (data as OrderWithProducts[]) ?? [];
   } catch (error) {
     console.error("Error fetching product by ID:", error);
     return [];
@@ -204,4 +214,5 @@ export {
   type ProductWithCategories,
   type BlogWithCategories,
   type BlogCategoriesResult,
+  type OrderWithProducts,
 };
